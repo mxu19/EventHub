@@ -1,0 +1,67 @@
+﻿@model Events.Web.Models.UpcomingPassedEventsViewModel
+
+@*<h1>
+        Upcoming Events
+    </h1>*@
+
+
+
+
+
+
+<div class="container">
+    <img src="~/Content/image/upcoming-events-header.jpg" height="250" width="1140" />
+</div>
+
+
+
+<div class="container">
+
+    @if (Model.UpcomingEvents.Any())
+    {
+        @Html.DisplayFor(x => x.UpcomingEvents)
+    }
+    else
+    {
+        <div class="container">&nbsp;&nbsp;&nbsp;&nbsp;Currently No events!</div>
+    }
+</div>
+
+<div class="container">
+
+    <h1>
+        &nbsp;&nbsp; Event History - Events that have been held.
+    </h1>
+
+</div>
+
+<div class="container">
+    @if (Model.PassedEvents.Any())
+    {
+        @Html.DisplayFor(x => x.PassedEvents)
+    }
+    else
+    {
+        <div class="container">&nbsp;&nbsp;&nbsp;&nbsp;Currently No events!</div>
+    }
+</div>
+
+
+<div class="container">
+
+    <h1>
+        &nbsp;&nbsp; Other Events I am going to attend.
+    </h1>
+
+</div>
+
+<div class="container">
+    @if (Model.OtherEvents.Any())
+    {
+        @Html.DisplayFor(x => x.OtherEvents)
+    }
+    else
+    {
+        <div class="container">&nbsp;&nbsp;&nbsp;&nbsp;Currently No events!</div>
+    }
+</div>

@@ -1,0 +1,182 @@
+﻿@model Events.Web.Models.UpcomingPassedEventsViewModel
+
+@{
+    ViewBag.Title = "My Events";
+}
+
+@*@Html.Partial("_Events")*@
+<div class="container">
+    <img src="~/Content/image/upcoming-events-header.jpg" height="250" width="1140" />
+</div>
+
+<div class="container">
+
+    <div class="page-header">
+        <h1>My Events <small>- I am going to attend.</small></h1>
+    </div>
+
+
+</div>
+
+<div class="container">
+
+    @if (Model.UpcomingEvents.Any())
+    {
+        @Html.DisplayFor(x => x.UpcomingEvents)
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">&nbsp;&nbsp;&nbsp;&nbsp;Currently No events!</div>
+    }
+</div>
+
+
+
+<div class="container">
+
+    <div class="page-header">
+        <h1>Other Events <small>- I am going to attend.</small></h1>
+    </div>
+
+</div>
+
+<div class="container">
+    @if (Model.OtherEvents.Any())
+    {
+        @Html.DisplayFor(x => x.OtherEvents)
+    }
+    else
+    {
+
+        <div class="alert alert-danger" role="alert">&nbsp;&nbsp;&nbsp;&nbsp;Currently No events!</div>
+    }
+</div>
+
+<div class="container">
+
+    <div class="page-header">
+        <h1>Event History <small>- Events that have been held.</small></h1>
+    </div>
+
+</div>
+
+<div class="container">
+    @if (Model.PassedEvents.Any())
+    {
+        @Html.DisplayFor(x => x.PassedEvents)
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">&nbsp;&nbsp;&nbsp;&nbsp;Currently No Passed Events!</div>
+    }
+</div>
+
+
+
+<style>
+    .btn {
+        opacity: 0.8;
+    }
+
+    .btn-primary {
+        display:none;
+    }
+
+    .btn-second {
+        display: none;
+    }
+
+    .btn-warning {
+        display: none;
+    }
+
+
+    .event-box {
+        width: 100%;
+        /*background: #ff6a00;*/
+        background-image: url('../../Content/image/happy-young-man-pointing-his-finger-against-orange-background_23-2148119642.jpg');
+        border-radius: 5px;
+        padding: 10px;
+        margin: 5px 0 5px 0;
+        word-wrap: break-word;
+        color: #fff;
+        box-shadow: 10px 10px 5px #888888;
+    }
+
+    .date {
+        display: block;
+        width: 100px;
+        height: 110px;
+        margin: 30px 200px;
+        background: #ff6a00;
+        text-align: center;
+        position: relative;
+        border-radius: 5px;
+        box-shadow: 5px 2px 6px #000;
+        -webkit-transform: rotate(-3deg);
+        -moz-transform: rotate(-3deg);
+    }
+
+        .date .binds {
+            position: absolute;
+            height: 15px;
+            width: 60px;
+            background: transparent;
+            border: 2px solid #999;
+            border-width: 0 5px;
+            top: -6px;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        .date .month {
+            background: #ff6a00;
+            display: block;
+            padding: 8px 0;
+            color: #fff;
+            font-size: 12px;
+            font-weight: bold;
+            border-bottom: 2px solid #333;
+            box-shadow: inset 0 -1px 0 0 #666;
+            border-radius: 5px;
+        }
+
+        .date .day {
+            background: #fff;
+            display: block;
+            padding: 8px 0;
+            color: #000000;
+            font-size: 12px;
+            font-weight: bold;
+            border-bottom: 2px solid #333;
+            box-shadow: inset 0 -1px 0 0 #666;
+        }
+
+            .date .day::after {
+                content: '';
+                display: block;
+                height: 100%;
+                width: 96%;
+                position: absolute;
+                top: 3px;
+                left: 2%;
+                z-index: -1;
+            }
+
+            .date .day::before {
+                content: '';
+                display: block;
+                height: 100%;
+                width: 90%;
+                position: absolute;
+                top: 6px;
+                left: 5%;
+                z-index: -1;
+            }
+</style>
+
+
+@section scripts {
+    @Scripts.Render("~/bundles/ajax")
+}

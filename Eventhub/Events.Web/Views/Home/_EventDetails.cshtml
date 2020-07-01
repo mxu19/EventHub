@@ -1,0 +1,58 @@
+﻿@model Events.Web.Models.EventDetailsViewModel
+
+@*description*@
+@if (Model.Description != null)
+{
+    <div class="description">Description: @Model.Description</div>
+}
+
+
+
+@*[Edit] and [Delete] buttons*@
+@if (ViewBag.CanEdit)
+{
+    @Html.ActionLink("Edit It", "Edit", "Events", new { id = Model.Id},
+          new {@class = "btn btn-info" })
+    <span></span>
+    @Html.ActionLink("Delete", "Delete", "Events", new { id = Model.Id },
+          new { @class = "btn btn-danger" })
+
+}
+
+@if (ViewBag.CanEdit == false)
+{
+    @Html.ActionLink("Add to Cal", "AddEventById", "Home", new { id = Model.Id},
+          new {@class = "btn btn-primary" })
+    <span></span>
+    @Html.ActionLink("Rem on Cal", "RemoveEventById", "Events", new { id = Model.Id},
+      new {@class = "btn btn-default" })
+    <span></span>
+    @Html.ActionLink("Follow Artist", "FollowUserById", "Home", new { id = Model.AuthorId },
+      new {@class = "btn btn-warning" })
+    @*<span></span>
+    @Html.ActionLink("Unfollow", "", "", new { id = Model.Id},
+      new {@class = "btn btn-second" })*@
+}
+
+<style>
+    .btn-second {
+        color: white;
+        background-color: dimgray;
+        border-radius: 4px;
+    }
+
+
+        /*.btn-second:hover {
+            box-shadow: inset 0 0 0 20rem var(--darken-1);
+        }
+
+        .btn-second:active {
+            box-shadow: inset 0 0 0 20rem var(--darken-2), inset 0 3px 4px 0 var(--darken-3), 0 0 1px var(--darken-2);
+        }
+
+        .btn-second:disabled,
+        .btn-second.is-disabled {
+            opacity: .5;
+        }*/
+
+</style>

@@ -1,0 +1,83 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.event-group-heading {
+    background: #8FDC68;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.event-box {
+    width: 100%;
+    background-image: url('image/eventbox.jpg');
+    /*background: #ff6a00;*/
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 0 5px 0;
+    word-wrap: break-word;
+    color: #fff;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+.alert {
+    margin-top: 10px;
+}
+
+.navbar-custom {
+    background-color: #FF8C00;
+}
+
+    .navbar-custom .navbar-nav > li > a {
+        color: #fff;
+    }
+
+    .navbar-custom .navbar-nav > .active > a {
+        color: #ffffff;
+        background-color: transparent;
+    }
+
+        .navbar-custom .navbar-nav > li > a:hover,
+        .navbar-custom .navbar-nav > li > a:focus,
+        .navbar-custom .navbar-nav > .active > a:hover,
+        .navbar-custom .navbar-nav > .active > a:focus,
+        .navbar-custom .navbar-nav > .open > a {
+            text-decoration: none;
+            background-color: #33aa33;
+        }
+
+    .navbar-custom .navbar-brand {
+        color: #eeeeee;
+    }
+
+    .navbar-custom .navbar-toggle {
+        background-color: #eeeeee;
+    }
+
+    .navbar-custom .icon-bar {
+        background-color: #33aa33;
+    }
+
+
+

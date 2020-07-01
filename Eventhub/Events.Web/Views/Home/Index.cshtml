@@ -1,0 +1,69 @@
+﻿@model Events.Web.Models.UpcomingPassedEventsViewModel
+
+@*@Html.Partial("_Events")*@
+<div class="container">
+
+    <br>
+    <img src="~/Content/image/910015.jpeg" />
+</div>
+@{
+    ViewBag.Title = "Public Events";
+}
+
+<div class="container">
+    <img src="~/Content/image/upcoming-events-header.jpg" height="250" width="1140" />
+</div>
+
+
+
+<div class="container">
+
+    @if (Model.UpcomingEvents.Any())
+    {
+        @Html.DisplayFor(x => x.UpcomingEvents)
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">&nbsp;&nbsp;&nbsp;&nbsp;Currently No events!</div>
+    }
+</div>
+
+<style>
+
+    .btn {
+        opacity: 0.8;
+    }
+
+    .btn-default {
+        display:none;
+    }
+    .btn-second {
+        display: none;
+    }
+
+    
+
+</style>
+
+@*<div class="container">
+
+    <h1>
+        &nbsp;&nbsp; Event History - Events that have been held.
+    </h1>
+
+</div>
+
+<div class="container">
+    @if (Model.PassedEvents.Any())
+    {
+        @Html.DisplayFor(x => x.PassedEvents)
+    }
+    else
+    {
+        <div class="container">&nbsp;&nbsp;&nbsp;&nbsp;Currently No events!</div>
+    }
+</div>*@
+
+@section scripts {
+    @Scripts.Render("~/bundles/ajax")
+}
